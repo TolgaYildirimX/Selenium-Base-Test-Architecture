@@ -1,0 +1,40 @@
+package maventest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class GenderSection {
+	
+	private WebDriver driver;
+	private By male = new By.ByCssSelector("label[for='gender-radio-1']");
+	private By female = new By.ByCssSelector("label[for='gender-radio-2']");
+	private By other = new By.ByCssSelector("label[for='gender-radio-3']");
+	
+	public enum Genders{MALE,FEMALE,OTHER}
+	
+	public GenderSection(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void clickRadioButton(Genders gender) {
+		switch (gender) {
+		case FEMALE :
+			driver.findElement(female).click();
+			break;
+			
+		case MALE :
+			driver.findElement(male).click();
+			break;
+			
+		case OTHER :
+			driver.findElement(other).click();
+			break;
+		}
+	}
+	
+	public boolean isRadioButtonChecked() {
+		return true;
+	}
+	
+	
+}
