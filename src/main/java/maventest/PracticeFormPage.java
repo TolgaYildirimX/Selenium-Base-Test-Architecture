@@ -13,15 +13,14 @@ public class PracticeFormPage {
 	
 	private GenderSection genderSection;
 	
+	public GenderSection genderSection() {
+		return this.genderSection;
+	}
 	
 	public PracticeFormPage(WebDriver driver) {
 		this.driver = driver;
 		genderSection = new GenderSection(driver);
 		
-	}
-	
-	public GenderSection genderSection() {
-		return this.genderSection;
 	}
 	
 	public void setName(String nameText) {
